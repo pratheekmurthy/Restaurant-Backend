@@ -1,17 +1,15 @@
-const express = require('express')  
-const configureDB = require('./database/db')
-const router = require('./routes/restaurantRoutes')
-const app = express()
-const Port = process.env.PORT || 4001
+const express = require('express'); // Import Express framework
+const configureDB = require('./database/db'); // Import database connection function
+const router = require('./routes/restaurantRoutes'); // Import route handlers for restaurant operations
 
+const app = express(); // Create an Express application instance
 
+configureDB(); // Connect to MongoDB database
 
+app.use(express.json()); // Middleware to parse JSON requests
 
-configureDB()
-app.use(express.json())
-app.use(router)
+app.use(router); // Load restaurant API routes
 
-
-app.listen(Port,()=>{
-    console.log(" server is running on ",Port)
-})
+app.listen(4001, () => { // Start the Express server and listen on the defined port
+    console.log(`Server is running on port ${4001}`); // Log server start message
+});
