@@ -1,10 +1,9 @@
 const express = require('express')  
 const configureDB = require('./database/db')
-const router = require('./routes/messageRoutes')
+const router = require('./routes/restaurantRoutes')
 const app = express()
 const Port = process.env.PORT || 4001
 
-require('dotenv').config();
 
 
 
