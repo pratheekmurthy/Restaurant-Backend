@@ -12,6 +12,9 @@ router.get('/api/getAllitems', RestaurantController.getAllitems)
 router.get('/api/getAllorders', RestaurantController.getAllorders)
 router.post('/api/addItem',RestaurantController.addItem)
 router.post('/api/createOrder',RestaurantController.createOrder)
+router.put('/api/updateOrder', RestaurantController.updateStatus); // Ensure this exists
+router.delete('/api/DeleteItem/:id', RestaurantController.deleteItem); // Correct delete route
+
 
 
 module.exports = router

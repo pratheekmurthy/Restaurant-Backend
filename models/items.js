@@ -7,7 +7,6 @@ const itemSchema = new Schema({
     name : {
         type : String,
         required : [true,'item name is required'],
-        unique :true
     },
     price : {
         type :String,

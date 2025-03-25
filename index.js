@@ -6,6 +6,9 @@ const app = express(); // Create an Express application instance
 
 configureDB(); // Connect to MongoDB database
 
+const cors = require('cors');
+app.use(cors());
+
 app.use(express.json()); // Middleware to parse JSON requests
 
 app.use(router); // Load restaurant API routes
