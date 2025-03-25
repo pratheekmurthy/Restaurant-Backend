@@ -30,8 +30,8 @@ RestaurantController.getAllitems = async (req, res) => {
 
 RestaurantController.createOrder = async (req, res) => {
     try {
-        const { items, tableNumber } = req.body;
-        const totalPrice = items.reduce((sum, item) => sum + item.price, 0);
+        const { items, tableNumber } = req.body;console.log(items)
+        const totalPrice = items.reduce((sum, item) => sum + Number(item.price), 0);
         const newOrder = new Order({ items, tableNumber, totalPrice, status: "open" });
         await newOrder.save();
         res.status(201).json({ message: "Order placed successfully!", newOrder });
